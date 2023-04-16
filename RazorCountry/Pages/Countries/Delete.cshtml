@@ -1,0 +1,79 @@
+﻿@page
+@model RazorCountry.Pages.Countries.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete Country";
+}
+
+<div class="jumbotron p-3">
+    <div class="d-flex align-items-center">
+        <h1 class="display-4 flex-grow-1">
+            Delete Country
+        </h1>
+        <a class="btn btn-primary btn-sm" asp-page="./Index">
+            Back to List
+        </a>
+    </div>
+</div>
+
+<div class="d-flex">
+    <div class="p-2 bg-primary text-white text-right" style="flex:0 0 15%">
+        @Html.DisplayNameFor(model => model.Country.ID)
+    </div>
+    <div class="p-2 border-top border-right border-bottom border-primary" style="flex:1 0 auto">
+        @Html.DisplayFor(model => model.Country.ID)
+    </div>
+</div>
+<div class="d-flex">
+    <div class="p-2 bg-primary text-white text-right" style="flex:0 0 15%">
+        @Html.DisplayNameFor(model => model.Country.ContinentID)
+    </div>
+    <div class="p-2 border-right border-bottom border-primary" style="flex:1 0 auto">
+        @Html.DisplayFor(model => model.Country.ContinentID)
+    </div>
+</div>
+<div class="d-flex">
+    <div class="p-2 bg-primary text-white text-right" style="flex:0 0 15%">
+        @Html.DisplayNameFor(model => model.Country.Name)
+    </div>
+    <div class="p-2 border-right border-bottom border-primary" style="flex:1 0 auto">
+        @Html.DisplayFor(model => model.Country.Name)
+    </div>
+</div>
+<div class="d-flex">
+    <div class="p-2 bg-primary text-white text-right" style="flex:0 0 15%">
+        @Html.DisplayNameFor(model => model.Country.Population)
+    </div>
+    <div class="p-2 border-right border-bottom border-primary" style="flex:1 0 auto">
+        @Html.DisplayFor(model => model.Country.Population)
+    </div>
+</div>
+<div class="d-flex">
+    <div class="p-2 bg-primary text-white text-right" style="flex:0 0 15%">
+        @Html.DisplayNameFor(model => model.Country.Area)
+    </div>
+    <div class="p-2 border-right border-bottom border-primary" style="flex:1 0 auto">
+        @Html.DisplayFor(model => model.Country.Area)
+    </div>
+</div>
+<div class="d-flex">
+    <div class="p-2 bg-primary text-white text-right" style="flex:0 0 15%">
+        @Html.DisplayNameFor(model => model.Country.UnitedNationsDate)
+    </div>
+    <div class="p-2 border-right border-bottom border-primary" style="flex:1 0 auto">
+        @Html.DisplayFor(model => model.Country.UnitedNationsDate)
+    </div>
+</div>
+<div class="d-flex">
+    <div class="p-2 bg-primary text-white text-right" style="flex:0 0 15%">
+        @Html.DisplayNameFor(model => model.Country.Density)
+    </div>
+    <div class="p-2 border-right border-bottom border-primary" style="flex:1 0 auto">
+        @Html.DisplayFor(model => model.Country.Density)
+    </div>
+</div>
+
+<form method="post" class="d-flex flex-row-reverse mt-3">
+    <input type="submit" value="Delete" class="btn btn-danger btn-sm" />
+    <input type="hidden" asp-for="Country.ID" />
+</form>

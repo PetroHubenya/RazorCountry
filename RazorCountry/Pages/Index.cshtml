@@ -1,0 +1,67 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="jumbotron p-3 d-flex align-items-center">
+    <h1 class="display-4 flex-grow-1">
+        Continent List
+    </h1>
+</div>
+
+<div id="Continents" class="d-flex bg-primary text-white">
+    <div class="p-2" style="flex:0 0 10%">
+        Code
+    </div>
+    <div class="p-2" style="flex:1 0 auto">
+        Name
+    </div>
+</div>
+
+@foreach (var item in @Model.Continents)
+{
+    <div class="d-flex border-left border-right border-bottom border-primary">
+        <div class="p-2" style="flex:0 0 10%">
+            @item.ID
+        </div>
+        <div class="p-2" style="flex:1 0 auto">
+            @item.Name
+        </div>
+    </div>
+}
+
+<br>
+
+<div class="jumbotron p-3 d-flex align-items-center">
+    <h1 class="display-4 flex-grow-1">
+        Country List
+    </h1>
+</div>
+
+<div id="Countries" class="d-flex bg-success text-white">
+    <div class="p-2" style="flex:0 0 10%">
+        Cont
+    </div>
+    <div class="p-2" style="flex:0 0 10%">
+        Code
+    </div>
+    <div class="p-2" style="flex:1 0 auto">
+        Name
+    </div>
+</div>
+
+@foreach (var item in @Model.Countries)
+{
+    <div class="d-flex border-left border-right border-bottom border-primary">
+        <div class="p-2" style="flex:0 0 10%">
+            @item.ContinentID
+        </div>
+        <div class="p-2" style="flex:0 0 10%">
+            @item.ID
+        </div>
+        <div class="p-2" style="flex:1 0 auto">
+            @item.Name
+        </div>
+    </div>
+}

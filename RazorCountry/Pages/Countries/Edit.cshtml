@@ -1,0 +1,63 @@
+﻿@page
+@model RazorCountry.Pages.Countries.EditModel
+
+@{
+    ViewData["Title"] = "Country Edit";
+}
+
+<div class="jumbotron p-3">
+    <div class="d-flex align-items-center">
+        <h1 class="display-4 flex-grow-1">
+            Country Edit
+        </h1>
+        <a class="btn btn-primary btn-sm" asp-page="./Index">
+            Back to List
+        </a>
+    </div>
+</div>
+
+<form method="post">
+    <div class="form-group d-flex">
+        <label asp-for="Country.ID" class="p-2 text-right" style="flex:0 0 15%"></label>
+        <div style="flex:1 0 auto;width:auto">
+            <input asp-for="Country.ID" class="form-control" />
+            <span asp-validation-for="Country.ID" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group d-flex">
+        <label asp-for="Country.ContinentID" class="p-2 text-right" style="flex:0 0 15%"></label>
+        <div style="flex:1 0 auto;width:auto">
+            <select asp-for="Country.ContinentID" asp-items="Model.Continents" class="form-control"></select>
+        </div>
+    </div>
+    <div class="form-group d-flex">
+        <label asp-for="Country.Name" class="p-2 text-right" style="flex:0 0 15%"></label>
+        <div style="flex:1 0 auto;width:auto">
+            <input asp-for="Country.Name" class="form-control" />
+            <span asp-validation-for="Country.Name" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group d-flex">
+        <label asp-for="Country.Population" class="p-2 text-right" style="flex:0 0 15%"></label>
+        <div style="flex:1 0 auto;width:auto">
+            <input asp-for="Country.Population" class="form-control" />
+            <span asp-validation-for="Country.Population" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group d-flex">
+        <label asp-for="Country.UnitedNationsDate" class="p-2 text-right" style="flex:0 0 15%"></label>
+        <div style="flex:1 0 auto;width:auto">
+            <input asp-for="Country.UnitedNationsDate" class="form-control" />
+            <span asp-validation-for="Country.UnitedNationsDate" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group d-flex flex-row-reverse">
+        <input type="submit" value="Save" class="btn btn-primary btn-sm" />
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
